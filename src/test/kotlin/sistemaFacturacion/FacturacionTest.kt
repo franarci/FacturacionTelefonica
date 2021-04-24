@@ -1,0 +1,5 @@
+package sistemaFacturacion
+
+class FacturacionTest {
+
+}
