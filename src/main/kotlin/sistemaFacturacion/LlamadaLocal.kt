@@ -4,11 +4,11 @@ import java.math.RoundingMode
 import java.time.LocalDateTime
 
 
-class LlamadaLocal(val duracion: Double, val fecha: LocalDateTime, val destinatario: Long){
-   val importe = importe()
+class LlamadaLocal(duracion: Double, fecha: LocalDateTime?, destinatario: Long): Llamada(duracion, fecha!!, destinatario){
 
 
-    fun importe(): Double {
+
+    override fun importe(): Double {
     if (esFinDeSemana()){
         return (0.10*duracion).toBigDecimal().setScale(2,RoundingMode.HALF_EVEN).toDouble()
     } else{

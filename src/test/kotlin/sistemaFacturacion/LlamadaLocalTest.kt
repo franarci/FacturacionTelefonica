@@ -16,8 +16,9 @@ class LlamadaLocalTest {
 
     val localLunesSiete = LlamadaLocal(2.5, diaHabilALasSiete,2215486459)
     val localMartesDiez =LlamadaLocal(5.0, diaHabilALasDiez,2215486459)
-    val localMiercolesVeinte = LlamadaLocal(7.0, diaHabilOncePM,2215486459)
+    val localMiercolesVeintitres = LlamadaLocal(7.0, diaHabilOncePM,2215486459)
     val localSabado = LlamadaLocal(4.0, diaSabado,2215486459)
+
 
     @Test
     fun test_Constructor(){
@@ -43,6 +44,6 @@ class LlamadaLocalTest {
 
     @Test
     fun test_LlamadaLocalConocePrecioDiaHabilDespuesDeLasVeinte(){
-        assertEquals((0.70), localMiercolesVeinte.importe())
+        assertEquals((0.70), localMiercolesVeintitres.importe())
     }
 }
