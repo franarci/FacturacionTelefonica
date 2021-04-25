@@ -4,6 +4,7 @@ import junit.framework.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import java.time.LocalDate
+import kotlin.test.assertTrue
 
 class FacturacionTest {
     val jorge = Cliente("Jorge Perez", 500)
@@ -26,5 +27,12 @@ class FacturacionTest {
     @Test
     fun test_SeFacturElImporteAcumulado(){
         assertEquals(519.18, jorge.facturar())
+    }
+
+    @Test
+    fun test_LuegoDeFacturarSeReiniciaElRegistroYElAcumulado(){
+        jorge.facturar()
+        kotlin.test.assertEquals(0.0, jorge.acumulado())
+        assertTrue(jorge.registro().isEmpty())
     }
 }

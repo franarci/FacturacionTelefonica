@@ -1,6 +1,7 @@
 package sistemaFacturacion
 
 import java.math.RoundingMode
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 
@@ -47,8 +48,12 @@ class Cliente(val nombreApellido: String,val abonoMensual: Int, var acumulado: D
 
     fun facturar(): Double {
         //Retorna el montoTotal(abonoMensual+acumulado) para testear que se calcula bien
+        val mes = LocalDate.now().month
+        val anio = LocalDate.now().year
         val montoTotal = (abonoMensual+acumulado()).toBigDecimal().setScale(2, RoundingMode.HALF_EVEN).toDouble()
-        Factura(nombreApellido(),abonoMensual(), montoTotal,registro() ).imprimir()
+        Factura(mes,anio,nombreApellido(),abonoMensual(), montoTotal,registro()).imprimir()
+        acumulado = 0.0
+        registro.clear()
         return montoTotal
     }
 }
