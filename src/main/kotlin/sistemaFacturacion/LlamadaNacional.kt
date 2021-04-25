@@ -6,7 +6,8 @@ class LlamadaNacional(duracion: Double, fecha: LocalDateTime, destinatario: Long
 
     override fun importe(): Double {
         //Se asume que para realizar el calculo se utilizara la variable localidad
-        return 5.0
+        importe = 5.0
+        return importe!!
     }
 
 }

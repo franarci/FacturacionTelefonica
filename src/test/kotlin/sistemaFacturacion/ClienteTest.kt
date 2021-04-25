@@ -27,9 +27,9 @@ class ClienteTest {
     @Test
     fun test_Constructor(){
         assertEquals("Jorge Perez", jorge.nombreApellido)
-        assertEquals(500, jorge.abonoMensual)
-        assertEquals(0.0, jorge.acumulado)
-        assertEquals(500, jorge.abonoMensual)
+        assertEquals(500, jorge.abonoMensual())
+        assertEquals(0.0, jorge.acumulado())
+        assertEquals(500, jorge.abonoMensual())
     }
 
     @Test

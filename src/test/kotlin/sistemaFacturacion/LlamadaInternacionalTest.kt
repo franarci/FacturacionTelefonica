@@ -11,8 +11,8 @@ class LlamadaInternacionalTest {
 
     @Test
     fun test_Constructor(){
-        assertEquals(2.5, internacionalSabado.duracion)
-        assertEquals(LocalDate.of(2021,4,19).atTime(7,0), internacionalSabado.fecha)
+        assertEquals(4.0, internacionalSabado.duracion)
+        assertEquals(LocalDate.of(2021,4,24).atTime(10,0), internacionalSabado.fecha)
         assertEquals(2215486459, internacionalSabado.destinatario)
         assertEquals("Uruguay", internacionalSabado.pais)
     }
