@@ -45,7 +45,7 @@ class Cliente(val nombreApellido: String,val abonoMensual: Int, var acumulado: D
     fun facturar(): Double {
         //Retorna el monto
         val montoTotal = (abonoMensual+acumulado()).toBigDecimal().setScale(2, RoundingMode.HALF_EVEN).toDouble()
-        Factura(nombreApellido(),montoTotal,registro()).imprimir()
+        Factura(nombreApellido(),abonoMensual(), montoTotal,registro() ).imprimir()
         return montoTotal
     }
 }
