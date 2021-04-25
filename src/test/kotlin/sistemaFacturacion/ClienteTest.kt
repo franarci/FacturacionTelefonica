@@ -19,6 +19,7 @@ class ClienteTest {
 
   @Before
   fun setUp() {
+      domingoALasOcho.dayOfWeek
       pedro.registrarLlamadaLocal(15.3,diaHabilALasDiez,5471358989)
       maria.registrarLlamadaNacional(7.14, domingoALasOcho, 2218842082, "La Plata")
       laura.registrarLlamadaInternacional(5.35, domingoALasOcho, 515544848743, "Peru")
@@ -50,6 +51,6 @@ class ClienteTest {
 
     @Test
     fun test_UnClienteRegistraUnaLlamadaYSeAcumulaElImporte(){
-        assertEquals(3.06, pedro.acumulado)
+        assertEquals(3.06, pedro.acumulado())
     }
 }

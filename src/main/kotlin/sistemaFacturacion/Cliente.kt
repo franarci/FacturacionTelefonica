@@ -25,25 +25,28 @@ class Cliente(val nombreApellido: String,val abonoMensual: Int, var acumulado: D
     }
 
     fun registrarLlamadaLocal(duracion: Double, fecha: LocalDateTime, destinatario: Long) {
+        //precondicion: la fecha que se recibe corresponde al mes actual por facturar
        val llamada = LlamadaLocal(duracion,fecha,destinatario)
         registro.add(llamada)
         acumulado+=llamada.importe()
     }
 
     fun registrarLlamadaNacional(duracion: Double, fecha: LocalDateTime,destinatario: Long, localidad: String) {
+        //precondicion: la fecha que se recibe corresponde al mes actual por facturar
         val llamada = LlamadaNacional(duracion,fecha,destinatario,localidad)
         registro.add(llamada)
         acumulado+=llamada.importe()
     }
 
     fun registrarLlamadaInternacional(duracion: Double, fecha: LocalDateTime, destinatario: Long, pais: String) {
+        //precondicion: la fecha que se recibe corresponde al mes actual por facturar
         val llamada = LlamadaInternacional(duracion,fecha,destinatario,pais)
         registro.add(llamada)
         acumulado+=llamada.importe()
     }
 
     fun facturar(): Double {
-        //Retorna el monto
+        //Retorna el montoTotal(abonoMensual+acumulado) para testear que se calcula bien
         val montoTotal = (abonoMensual+acumulado()).toBigDecimal().setScale(2, RoundingMode.HALF_EVEN).toDouble()
         Factura(nombreApellido(),abonoMensual(), montoTotal,registro() ).imprimir()
         return montoTotal
