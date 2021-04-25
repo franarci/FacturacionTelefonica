@@ -4,6 +4,7 @@ import org.junit.Before
 import org.junit.Test
 import java.time.LocalDate
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 
 class ClienteTest {
@@ -29,7 +30,7 @@ class ClienteTest {
         assertEquals("Jorge Perez", jorge.nombreApellido)
         assertEquals(500, jorge.abonoMensual())
         assertEquals(0.0, jorge.acumulado())
-        assertEquals(500, jorge.abonoMensual())
+        assertTrue(jorge.registro().isEmpty())
     }
 
     @Test
